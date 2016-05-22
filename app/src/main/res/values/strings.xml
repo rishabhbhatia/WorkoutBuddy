@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Workout Buddy</string>
+
+    <!-- Login Screen -->
+    <string name="login_label">Login</string>
+    <string name="login_username">USERNAME</string>
+    <string name="login_pass">PASSWORD</string>
+    <string name="login_button">Login</string>
+    <string name="login_forgot_pass"><u>Forgot Password</u></string>
 </resources>
