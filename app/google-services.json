@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "50454361760",
+    "project_id": "workoutbuddy-3a499"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50454361760:android:19c8a6ea861fc511",
+        "android_client_info": {
+          "package_name": "com.fitbud.workoutbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50454361760-s2fdsctran2mdmkbb7lc87br5ut7e420.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fitbud.workoutbuddy",
+            "certificate_hash": "66EEDE0D0129571B5F3FC92FECDA056F56F13DEB"
+          }
+        },
+        {
+          "client_id": "50454361760-ji2ic08u6quupqoc8hicri7nm87i8etl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu8yzfyDQYF_gG_QtUfv4PGwODxCoUOuA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
