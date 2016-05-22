@@ -9,7 +9,7 @@
     </style>
 
     <!-- Splash Screen -->
-    <style name="Splash_Text_Label">Splash_Text_Label>
+    <style name="Splash_Text_Label">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">18sp</item>
     </style>
@@ -33,5 +33,29 @@
         <item name="android:textColor">@color/login_button_bg</item>
     </style>
 
+    <!-- Landing Screen -->
+    <style name="Landing_Screen_Profile_Name">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Landing_Screen_New_Workout">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Landing_Screen_Date">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Landing_Screen_Clients_Label">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Landing_Screen_New_Workout_Footer">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 
 </resources>

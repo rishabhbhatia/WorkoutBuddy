@@ -11,4 +11,8 @@
 
     <color name="divider_color">#cccccc</color>
     <color name="text_color">#444444</color>
+
+    <!-- Main Landing Screen -->
+    <color name="landing_new_workout_bg">#90000000</color>
+
 </resources>

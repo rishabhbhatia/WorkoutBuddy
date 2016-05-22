@@ -7,4 +7,9 @@
     <string name="login_pass">PASSWORD</string>
     <string name="login_button">Login</string>
     <string name="login_forgot_pass"><u>Forgot Password</u></string>
+
+    <!-- Landing Screen -->
+    <string name="landing_new_workout_label">New Workout</string>
+    <string name="landing_new_workout_footer">Create Custom Workout</string>
+
 </resources>

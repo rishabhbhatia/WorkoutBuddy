@@ -1,0 +1,133 @@
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_landing_profile_holder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="30%"
+        app:layout_widthPercent="100%"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_landing_profile_image"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/ic_launcher"
+                app:civ_border_width="2dp"
+                android:layout_gravity="center"
+                app:civ_border_color="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/tv_landing_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Landing_Screen_Profile_Name"
+                android:text="Rishabh Bhatia"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginTop="@dimen/medium_padding"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Landing_Screen_Date"
+                android:text="24th May 2016 | Sunday"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_landing_clients_holder"
+        android:layout_below="@+id/rl_landing_profile_holder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="30%"
+        app:layout_widthPercent="100%"
+        android:orientation="vertical"
+        android:padding="@dimen/medium_padding"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Clients"
+            style="@style/Landing_Screen_Clients_Label"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_padding"
+            android:padding="@dimen/small_padding"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_landing_recently_viewed_workouts_holder"
+        android:layout_below="@+id/ll_landing_clients_holder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="30%"
+        app:layout_widthPercent="100%"
+        android:orientation="vertical"
+        android:padding="@dimen/medium_padding"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recently Viewed"
+            style="@style/Landing_Screen_Clients_Label"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_padding"
+            android:padding="@dimen/small_padding"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/ll_landing_recently_viewed_workouts_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:alpha="0.8"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            style="@style/Landing_Screen_New_Workout_Footer"
+            android:text="@string/landing_new_workout_footer"
+            android:drawableLeft="@drawable/ic_dumbell"
+            android:drawablePadding="@dimen/medium_padding"
+            />
+
+    </LinearLayout>
+
+
+</android.support.percent.PercentRelativeLayout>
