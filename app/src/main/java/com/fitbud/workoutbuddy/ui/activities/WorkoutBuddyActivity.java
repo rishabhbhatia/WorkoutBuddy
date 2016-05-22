@@ -1,4 +1,4 @@
-package com.fitbud.workoutbuddy;
+package com.fitbud.workoutbuddy.ui.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
