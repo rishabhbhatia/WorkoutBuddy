@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Workout Buddy</string>
 
+    <!-- Generic Text -->
+    <string name="simple_progress_dialog_loading">Loading...</string>
+
     <!-- Login Screen -->
     <string name="login_label">Login</string>
     <string name="login_username">USERNAME</string>
