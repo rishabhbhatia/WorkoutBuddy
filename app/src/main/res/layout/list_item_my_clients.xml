@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/small_card_radius"
+    app:cardElevation="@dimen/small_card_elevation"
+    app:contentPadding="@dimen/small_padding"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_list_item_my_client_holder"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/small_padding"
+        >
+
+        <ImageView
+            android:id="@+id/iv_list_item_my_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/common_plus_signin_btn_icon_dark_pressed"
+            android:contentDescription="@string/image_placeholder" />
+
+        <TextView
+            android:id="@+id/tv_list_item_my_client_fname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Rishabh"
+            android:layout_marginTop="@dimen/small_padding"
+            />
+
+        <TextView
+            android:id="@+id/tv_list_item_my_client_lname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Bhatia"
+            />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
