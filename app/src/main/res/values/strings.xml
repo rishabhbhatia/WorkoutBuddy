@@ -4,6 +4,7 @@
     <!-- Generic Text -->
     <string name="simple_progress_dialog_loading">Loading...</string>
     <string name="image_placeholder">No Image</string>
+    <string name="no_internet">Internet not connected. Please connect &amp; retry!</string>
 
     <!-- Login Screen -->
     <string name="login_label">Login</string>

@@ -1,7 +1,10 @@
 package com.fitbud.workoutbuddy.ui.activities;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.percent.PercentRelativeLayout;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
@@ -13,6 +16,7 @@ import android.widget.LinearLayout;
 
 import com.fitbud.workoutbuddy.R;
 import com.fitbud.workoutbuddy.events.LoginEvent;
+import com.fitbud.workoutbuddy.utils.WorkoutBuddyUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -40,6 +44,8 @@ public class LoginActivity extends WorkoutBuddyActivity {
     ImageView ivUsernameError;
     @BindView(R.id.iv_login_password_error)
     ImageView ivPasswordError;
+    @BindView(R.id.prl_login_main_holder)
+    PercentRelativeLayout mainRelative;
 
     private Animation shake;
 
@@ -70,15 +76,6 @@ public class LoginActivity extends WorkoutBuddyActivity {
         btLogin.setHeight(linearUsernameHolder.getMeasuredHeight());
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
-    }
-
     @OnClick(R.id.bt_login)
     public void onLogin()
     {
@@ -90,10 +87,46 @@ public class LoginActivity extends WorkoutBuddyActivity {
             ivPasswordError.startAnimation(shake);
         }else
         {
-            EventBus bus = EventBus.getDefault();
-            LoginEvent loginEvent = new LoginEvent(LoginActivity.this, etUsername.getText().toString(),
-                    etPass.getText().toString());
-            bus.post(loginEvent);
+            new loginTask().execute();
+        }
+    }
+
+    private class loginTask extends AsyncTask<Void, Void, Void>
+    {
+        private boolean isOnline = false;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            WorkoutBuddyUtils.showSimpleProgressDialog(LoginActivity.this);
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            if(WorkoutBuddyUtils.isNetworkConnected(LoginActivity.this))
+            {
+                isOnline = true;
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            WorkoutBuddyUtils.removeSimpleProgressDialog();
+
+            if(isOnline)
+            {
+                EventBus bus = EventBus.getDefault();
+                LoginEvent loginEvent = new LoginEvent(LoginActivity.this, etUsername.getText().toString(),
+                        etPass.getText().toString());
+                bus.post(loginEvent);
+            }else
+            {
+                WorkoutBuddyUtils.showSnackbar(mainRelative, getResources().getString(R.string.no_internet),
+                        Snackbar.LENGTH_LONG);
+            }
         }
     }
 
@@ -116,4 +149,14 @@ public class LoginActivity extends WorkoutBuddyActivity {
         EventBus.getDefault().unregister(this);
         super.onStop();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+
 }
