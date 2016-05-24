@@ -7,4 +7,6 @@ public class Const {
 
     public static final String USER_LOGIN_STATUS = "user_login_status";
     public static final String SHARED_PREFERENCES_NAME = "workout_buddy_prefs";
+
+    public static final String USER_LOGIN_USERNAME = "USER_LOGIN_USERNAME";
 }

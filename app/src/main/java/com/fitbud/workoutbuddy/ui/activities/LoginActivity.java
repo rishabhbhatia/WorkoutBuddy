@@ -12,6 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.fitbud.workoutbuddy.R;
+import com.fitbud.workoutbuddy.events.LoginEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -86,9 +90,30 @@ public class LoginActivity extends WorkoutBuddyActivity {
             ivPasswordError.startAnimation(shake);
         }else
         {
-            Intent intent = new Intent(LoginActivity.this, MainLandingActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_from_bottom, R.anim.slide_out_to_bottom);
+            EventBus bus = EventBus.getDefault();
+            LoginEvent loginEvent = new LoginEvent(LoginActivity.this, etUsername.getText().toString(),
+                    etPass.getText().toString());
+            bus.post(loginEvent);
         }
+    }
+
+    @Subscribe
+    public void onLoginEvent(LoginEvent loginEvent)
+    {
+        Intent intent = new Intent(LoginActivity.this, MainLandingActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_bottom, R.anim.slide_out_to_bottom);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        EventBus.getDefault().unregister(this);
+        super.onStop();
     }
 }
