@@ -75,7 +75,7 @@
                     android:inputType="textNoSuggestions"
                     android:background="@android:color/transparent"
                     android:hint="@string/login_username"
-                    android:ems="12"
+                    android:ems="11"
                     android:drawableLeft="@android:drawable/sym_action_email"
                     android:drawableStart="@android:drawable/sym_action_email"
                     android:drawablePadding="@dimen/small_padding"
@@ -100,7 +100,7 @@
             android:id="@+id/ll_login_pass_holder"
             android:gravity="center"
             android:background="@color/login_input_bg"
-            android:layout_marginTop="@dimen/medium_padding"
+            android:layout_marginTop="@dimen/large_padding"
             >
 
             <LinearLayout
@@ -124,7 +124,7 @@
                     android:drawableLeft="@android:drawable/sym_action_email"
                     android:drawableStart="@android:drawable/sym_action_email"
                     android:drawablePadding="@dimen/small_padding"
-                    android:ems="12"
+                    android:ems="11"
                     />
 
                 <ImageView

@@ -28,7 +28,7 @@
     </style>
 
     <style name="Login_Forgot_Pass">
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/login_button_bg</item>
     </style>
