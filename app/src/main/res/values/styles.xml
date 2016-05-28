@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Toolbar_Title_Text">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
     <!-- Splash Screen -->
     <style name="Splash_Text_Label">
         <item name="android:textColor">@android:color/white</item>
