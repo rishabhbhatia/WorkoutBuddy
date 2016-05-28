@@ -14,6 +14,47 @@
         android:gravity="center"
         android:background="@color/colorPrimaryDark">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_landing_profile_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_launcher"
+                app:civ_border_width="2dp"
+                android:layout_gravity="center"
+                app:civ_border_color="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/tv_landing_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Landing_Screen_Profile_Name"
+                android:text="Rishabh Bhatia"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginTop="@dimen/medium_padding"
+                />
+
+            <TextView
+                android:id="@+id/tv_landing_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Landing_Screen_Date"
+                android:text="24th May 2016 | Sunday"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+
         <ImageView
             android:id="@+id/iv_landing_profile_stats"
             android:layout_width="wrap_content"
@@ -35,44 +76,6 @@
             android:src="@android:drawable/sym_action_chat"
             />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/iv_landing_profile_image"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_launcher"
-                app:civ_border_width="2dp"
-                android:layout_gravity="center"
-                app:civ_border_color="#FFFFFF"/>
-
-            <TextView
-                android:id="@+id/tv_landing_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Landing_Screen_Profile_Name"
-                android:text="Rishabh Bhatia"
-                android:gravity="center"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:layout_marginTop="@dimen/medium_padding"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Landing_Screen_Date"
-                android:text="24th May 2016 | Sunday"
-                android:gravity="center"
-                />
-
-        </LinearLayout>
 
     </RelativeLayout>
 
@@ -95,6 +98,7 @@
             />
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_landing_clients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_padding"
@@ -121,6 +125,7 @@
             />
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_landing_recently_viewed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_padding"
