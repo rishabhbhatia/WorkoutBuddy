@@ -14,9 +14,30 @@
         android:gravity="center"
         android:background="@color/colorPrimaryDark">
 
+        <ImageView
+            android:id="@+id/iv_landing_profile_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:padding="@dimen/medium_padding"
+            android:src="@android:drawable/sym_action_email"
+            />
+
+        <ImageView
+            android:layout_toLeftOf="@+id/iv_landing_profile_stats"
+            android:layout_toStartOf="@+id/iv_landing_profile_stats"
+            android:id="@+id/iv_landing_profile_new_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/medium_padding"
+            android:src="@android:drawable/sym_action_chat"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center"
             >
@@ -24,8 +45,8 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/iv_landing_profile_image"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/ic_launcher"
                 app:civ_border_width="2dp"
                 android:layout_gravity="center"
@@ -109,6 +130,7 @@
 
     <LinearLayout
         android:layout_below="@+id/ll_landing_recently_viewed_workouts_holder"
+        android:id="@+id/ll_landing_new_workout_footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/black"
@@ -117,6 +139,7 @@
         >
 
         <TextView
+            android:id="@+id/tv_landing_new_workout_footer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -124,7 +147,7 @@
             style="@style/Landing_Screen_New_Workout_Footer"
             android:text="@string/landing_new_workout_footer"
             android:drawableLeft="@drawable/ic_dumbell"
-            android:drawablePadding="@dimen/medium_padding"
+            android:drawablePadding="@dimen/large_padding"
             />
 
     </LinearLayout>
