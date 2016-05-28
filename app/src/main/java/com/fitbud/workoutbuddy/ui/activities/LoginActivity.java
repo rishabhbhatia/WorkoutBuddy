@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 
 import com.fitbud.workoutbuddy.R;
 import com.fitbud.workoutbuddy.events.LoginEvent;
+import com.fitbud.workoutbuddy.ui.fragments.ForgotPassFragment;
 import com.fitbud.workoutbuddy.utils.WorkoutBuddyUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -157,6 +158,12 @@ public class LoginActivity extends WorkoutBuddyActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
+    }
+
+    @OnClick(R.id.tv_forgot_pass)
+    public void loadForgotPassFrag() {
+        ForgotPassFragment forgotPassFragment = ForgotPassFragment.newInstance();
+        switchFragment(getSupportFragmentManager(), forgotPassFragment, getResources().getString(R.string.fragment_forgot_pass_tag));
     }
 
 }

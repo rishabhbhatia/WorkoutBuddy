@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/prl_forgot_pass_main_holder"
+    android:background="@android:color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_forgot_pass_label_holder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_heightPercent="40%"
+        app:layout_widthPercent="100%"
+        >
+
+        <include layout="@layout/toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|bottom"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/common_plus_signin_btn_icon_dark_pressed"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forgot_pass_label"
+                android:textAllCaps="true"
+                android:textAppearance="@style/Forgot_Pass_Text_Label"
+                android:padding="@dimen/medium_padding"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_forgot_pass_input_holder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_heightPercent="25%"
+        app:layout_widthPercent="100%"
+        android:gravity="center"
+        android:layout_below="@+id/ll_forgot_pass_label_holder"
+        android:layout_marginLeft="@dimen/large_padding"
+        android:layout_marginStart="@dimen/large_padding"
+        android:layout_marginRight="@dimen/large_padding"
+        android:layout_marginEnd="@dimen/large_padding"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/ll_forgot_pass_username_holder"
+            android:gravity="center"
+            android:background="@color/forgot_pass_input_bg"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="1dp"
+                android:padding="@dimen/medium_padding"
+                android:background="@android:color/white"
+                >
+
+                <EditText
+                    android:id="@+id/et_forgot_pass_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textNoSuggestions"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/forgot_pass_input"
+                    android:ems="12"
+                    android:drawableLeft="@android:drawable/sym_action_email"
+                    android:drawableStart="@android:drawable/sym_action_email"
+                    android:drawablePadding="@dimen/medium_padding"
+                    android:padding="@dimen/medium_padding"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_forgot_pass_buttons_holder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_heightPercent="30%"
+        app:layout_widthPercent="100%"
+        android:gravity="top|center_horizontal"
+        android:layout_below="@+id/ll_forgot_pass_input_holder"
+        >
+
+        <Button
+            android:id="@+id/bt_forgot_pass_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Forgot_Pass_Send_Button"
+            android:text="@string/forgot_pass_send_button"
+            />
+
+    </LinearLayout>
+
+</android.support.percent.PercentRelativeLayout>

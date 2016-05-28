@@ -6,12 +6,21 @@
     <string name="image_placeholder">No Image</string>
     <string name="no_internet">Internet not connected. Please connect &amp; retry!</string>
 
+    <!-- Fragment Tags -->
+    <string name="fragment_forgot_pass_tag">Frag_Forgot_Pass</string>
+
     <!-- Login Screen -->
     <string name="login_label">Login</string>
     <string name="login_username">USERNAME</string>
     <string name="login_pass">PASSWORD</string>
     <string name="login_button">Login</string>
     <string name="login_forgot_pass"><u>Forgot Password</u></string>
+
+    <!-- Forgot Pass Screen -->
+    <string name="forgot_pass_label">Forgot Password</string>
+    <string name="forgot_pass_input">Email</string>
+    <string name="forgot_pass_send_button">Send</string>
+    <string name="forgot_pass_empty_rider_id">Please enter your Email id &amp; click Send</string>
 
     <!-- Landing Screen -->
     <string name="landing_new_workout_label">New Workout</string>
