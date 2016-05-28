@@ -97,10 +97,10 @@
             style="@style/Landing_Screen_Clients_Label"
             />
 
-        <android.support.v7.widget.RecyclerView
+        <com.malinskiy.superrecyclerview.SuperRecyclerView
             android:id="@+id/rv_landing_clients"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/small_padding"
             android:padding="@dimen/small_padding"/>
 
@@ -124,10 +124,10 @@
             style="@style/Landing_Screen_Clients_Label"
             />
 
-        <android.support.v7.widget.RecyclerView
+        <com.malinskiy.superrecyclerview.SuperRecyclerView
             android:id="@+id/rv_landing_recently_viewed"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/small_padding"
             android:padding="@dimen/small_padding"/>
 
