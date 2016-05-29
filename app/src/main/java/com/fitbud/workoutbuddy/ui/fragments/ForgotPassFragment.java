@@ -33,8 +33,8 @@ public class ForgotPassFragment extends WorkoutBuddyFragment {
     PercentRelativeLayout mainRelative;
     @BindView(R.id.ll_forgot_pass_input_holder)
     LinearLayout linearInputHolder;
-    @BindView(R.id.et_forgot_pass_username)
-    EditText etUsername;
+    @BindView(R.id.et_forgot_pass_email)
+    EditText etEmail;
     @BindView(R.id.bt_forgot_pass_send)
     Button btSend;
     @BindView(R.id.toolbar)
@@ -59,6 +59,7 @@ public class ForgotPassFragment extends WorkoutBuddyFragment {
             unbinder = ButterKnife.bind(this, view);
 
             initializeToolbar();
+            measureSendButton();
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -81,6 +82,15 @@ public class ForgotPassFragment extends WorkoutBuddyFragment {
         }catch (Exception e) {e.printStackTrace();}
     }
 
+    private void measureSendButton()
+    {
+        linearInputHolder.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        etEmail.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+
+        btSend.setWidth(linearInputHolder.getMeasuredWidth());
+        //btSend.setHeight(linearInputHolder.getMeasuredHeight());
+    }
+
     @Override
     public void onDestroyView() {
         unbinder.unbind();
@@ -91,7 +101,7 @@ public class ForgotPassFragment extends WorkoutBuddyFragment {
     public void forgotPassSendClicked() {
         try {
 
-            if (etUsername.getText() == null || etUsername.getText().toString().equals("")) {
+            if (etEmail.getText() == null || etEmail.getText().toString().equals("")) {
                 WorkoutBuddyUtils.showSnackbar(mainRelative, getResources().getString(R.string.forgot_pass_empty_rider_id),
                         Snackbar.LENGTH_LONG);
             } else {

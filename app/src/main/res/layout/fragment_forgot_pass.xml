@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/ll_forgot_pass_username_holder"
+            android:id="@+id/ll_forgot_pass_email_holder"
             android:gravity="center"
             android:background="@color/forgot_pass_input_bg"
             >
@@ -72,15 +72,14 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_margin="1dp"
-                android:padding="@dimen/medium_padding"
                 android:background="@android:color/white"
                 >
 
                 <EditText
-                    android:id="@+id/et_forgot_pass_username"
+                    android:id="@+id/et_forgot_pass_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="textNoSuggestions"
+                    android:inputType="textEmailAddress"
                     android:background="@android:color/transparent"
                     android:hint="@string/forgot_pass_input"
                     android:ems="12"
