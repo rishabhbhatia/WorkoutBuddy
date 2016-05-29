@@ -63,6 +63,10 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="Landing_Screen_Recently_Viewed_Label">
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="Landing_Screen_New_Workout_Footer">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">18sp</item>

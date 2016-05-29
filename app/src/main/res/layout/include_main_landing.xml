@@ -8,7 +8,7 @@
         android:id="@+id/rl_landing_profile_holder"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_heightPercent="30%"
+        app:layout_heightPercent="28%"
         app:layout_widthPercent="100%"
         android:orientation="vertical"
         android:gravity="center"
@@ -24,12 +24,11 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/iv_landing_profile_image"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
                 android:src="@drawable/ic_launcher"
-                app:civ_border_width="2dp"
                 android:layout_gravity="center"
-                app:civ_border_color="#FFFFFF"/>
+            />
 
             <TextView
                 android:id="@+id/tv_landing_name"
@@ -84,7 +83,7 @@
         android:layout_below="@+id/rl_landing_profile_holder"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_heightPercent="30%"
+        app:layout_heightPercent="32%"
         app:layout_widthPercent="100%"
         android:orientation="vertical"
         android:padding="@dimen/medium_padding"
@@ -95,6 +94,7 @@
             android:layout_height="wrap_content"
             android:text="My Clients"
             style="@style/Landing_Screen_Clients_Label"
+            android:layout_marginTop="@dimen/small_padding"
             />
 
         <com.malinskiy.superrecyclerview.SuperRecyclerView
@@ -102,7 +102,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/small_padding"
-            android:padding="@dimen/small_padding"/>
+            android:padding="@dimen/small_padding"
+            />
 
     </LinearLayout>
 
@@ -111,7 +112,7 @@
         android:layout_below="@+id/ll_landing_clients_holder"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_heightPercent="30%"
+        app:layout_heightPercent="32%"
         app:layout_widthPercent="100%"
         android:orientation="vertical"
         android:padding="@dimen/medium_padding"
@@ -121,7 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Recently Viewed"
-            style="@style/Landing_Screen_Clients_Label"
+            style="@style/Landing_Screen_Recently_Viewed_Label"
             />
 
         <com.malinskiy.superrecyclerview.SuperRecyclerView
@@ -151,7 +152,6 @@
             android:gravity="center"
             style="@style/Landing_Screen_New_Workout_Footer"
             android:text="@string/landing_new_workout_footer"
-            android:drawableLeft="@drawable/ic_dumbell"
             android:drawablePadding="@dimen/large_padding"
             />
 
