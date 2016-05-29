@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.percent.PercentRelativeLayout;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.fitbud.workoutbuddy.R;
 import com.fitbud.workoutbuddy.ui.activities.WorkoutBuddyActivity;
@@ -22,6 +22,7 @@ import com.fitbud.workoutbuddy.utils.WorkoutBuddyUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * Created by Rishabh Bhatia on 5/28/2016.
@@ -39,6 +40,8 @@ public class ForgotPassFragment extends WorkoutBuddyFragment {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    private Unbinder unbinder;
+
     public static ForgotPassFragment newInstance() {
         return new ForgotPassFragment();
     }
@@ -53,7 +56,7 @@ public class ForgotPassFragment extends WorkoutBuddyFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         try {
             super.onViewCreated(view, savedInstanceState);
-            ButterKnife.bind(view);
+            unbinder = ButterKnife.bind(this, view);
 
             initializeToolbar();
         }catch (Exception e) {
@@ -62,22 +65,25 @@ public class ForgotPassFragment extends WorkoutBuddyFragment {
     }
 
     private void initializeToolbar() {
-        TextView tvToolbarTitle = (TextView) toolbar.findViewById(R.id.tv_toolbar_label);
-        ImageView ivToolbarBack = (ImageView) toolbar.findViewById(R.id.iv_toolbar_back);
+        try {
+            TextView tvToolbarTitle = (TextView) toolbar.findViewById(R.id.tv_toolbar_label);
+            ImageView ivToolbarBack = (ImageView) toolbar.findViewById(R.id.iv_toolbar_back);
 
-        tvToolbarTitle.setText(getString(R.string.app_name));
+            tvToolbarTitle.setText(getString(R.string.app_name));
 
-        ivToolbarBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((WorkoutBuddyActivity)getActivity()).removeFragment(getActivity().getSupportFragmentManager(),
-                        ForgotPassFragment.this);
-            }
-        });
+            ivToolbarBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ((WorkoutBuddyActivity) getActivity()).removeFragment(getActivity().getSupportFragmentManager(),
+                            ForgotPassFragment.this);
+                }
+            });
+        }catch (Exception e) {e.printStackTrace();}
     }
 
     @Override
     public void onDestroyView() {
+        unbinder.unbind();
         super.onDestroyView();
     }
 

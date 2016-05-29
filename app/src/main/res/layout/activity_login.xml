@@ -166,6 +166,7 @@
             style="@style/Login_Forgot_Pass"
             android:text="@string/login_forgot_pass"
             android:layout_margin="@dimen/medium_padding"
+            android:padding="@dimen/medium_padding"
             />
 
     </LinearLayout>
