@@ -285,4 +285,13 @@ public class WorkoutBuddyUtils {
         messageDialog = dialogBuilder.create();
         messageDialog.show();
     }
+
+    public static void closeApp(Activity activity)
+    {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+        activity.finish();
+    }
 }

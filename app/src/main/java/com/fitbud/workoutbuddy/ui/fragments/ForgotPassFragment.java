@@ -59,7 +59,9 @@ public class ForgotPassFragment extends WorkoutBuddyFragment {
             unbinder = ButterKnife.bind(this, view);
 
             initializeToolbar();
+
             measureSendButton();
+
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -70,7 +72,7 @@ public class ForgotPassFragment extends WorkoutBuddyFragment {
             TextView tvToolbarTitle = (TextView) toolbar.findViewById(R.id.tv_toolbar_label);
             ImageView ivToolbarBack = (ImageView) toolbar.findViewById(R.id.iv_toolbar_back);
 
-            tvToolbarTitle.setText(getString(R.string.app_name));
+            tvToolbarTitle.setText(getString(R.string.label_forgot_pass_screen));
 
             ivToolbarBack.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Workout Buddy</string>
 
+    <!-- Screen Labels -->
+    <string name="label_login_screen">Login</string>
+    <string name="label_forgot_pass_screen">Reset Password</string>
+
     <!-- Generic Text -->
     <string name="simple_progress_dialog_loading">Loading...</string>
     <string name="image_placeholder">No Image</string>

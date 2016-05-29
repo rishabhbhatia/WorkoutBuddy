@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.percent.PercentRelativeLayout;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.fitbud.workoutbuddy.R;
 import com.fitbud.workoutbuddy.events.LoginEvent;
@@ -47,6 +49,8 @@ public class LoginActivity extends WorkoutBuddyActivity {
     ImageView ivPasswordError;
     @BindView(R.id.prl_login_main_holder)
     PercentRelativeLayout mainRelative;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     private Animation shake;
 
@@ -59,22 +63,46 @@ public class LoginActivity extends WorkoutBuddyActivity {
 
         measureLoginButton();
 
+        initializeToolbar();
+
         shake = AnimationUtils.loadAnimation(this, R.anim.shake);
     }
 
     private void measureLoginButton()
     {
-        linearUsernameHolder.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-        etUsername.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        try {
+            linearUsernameHolder.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+            etUsername.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
 
-        linearPasswordHolder.setMinimumWidth(linearUsernameHolder.getMeasuredWidth());
-        linearPasswordHolder.setMinimumHeight(linearUsernameHolder.getMeasuredHeight());
+            linearPasswordHolder.setMinimumWidth(linearUsernameHolder.getMeasuredWidth());
+            linearPasswordHolder.setMinimumHeight(linearUsernameHolder.getMeasuredHeight());
 
-        etPass.setWidth(etUsername.getMeasuredWidth());
-        etPass.setHeight(etUsername.getMeasuredHeight());
+            etPass.setWidth(etUsername.getMeasuredWidth());
+            etPass.setHeight(etUsername.getMeasuredHeight());
 
-        btLogin.setWidth(linearUsernameHolder.getMeasuredWidth());
-        btLogin.setHeight(linearUsernameHolder.getMeasuredHeight());
+            btLogin.setWidth(linearUsernameHolder.getMeasuredWidth());
+            btLogin.setHeight(linearUsernameHolder.getMeasuredHeight());
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void initializeToolbar() {
+        try {
+            TextView tvToolbarTitle = (TextView) toolbar.findViewById(R.id.tv_toolbar_label);
+            ImageView ivToolbarBack = (ImageView) toolbar.findViewById(R.id.iv_toolbar_back);
+
+            //replace back button icon with home button icon
+
+            tvToolbarTitle.setText(getString(R.string.app_name));
+
+            ivToolbarBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    WorkoutBuddyUtils.closeApp(LoginActivity.this);
+                }
+            });
+        }catch (Exception e) {e.printStackTrace();}
     }
 
     @OnClick(R.id.bt_login)

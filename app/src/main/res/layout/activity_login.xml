@@ -12,25 +12,36 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_heightPercent="30%"
+        app:layout_heightPercent="35%"
         app:layout_widthPercent="100%"
-        android:gravity="center_horizontal|bottom"
+        android:gravity="center_horizontal"
         >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/common_plus_signin_btn_icon_dark_pressed"
-            />
+        <include layout="@layout/toolbar" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/login_label"
-            android:textAllCaps="true"
-            android:textAppearance="@style/Login_Text_Label"
-            android:padding="@dimen/small_padding"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|bottom"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/common_plus_signin_btn_icon_dark_pressed"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_label"
+                android:textAllCaps="true"
+                android:textAppearance="@style/Login_Text_Label"
+                android:padding="@dimen/small_padding"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -143,7 +154,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_heightPercent="30%"
+        app:layout_heightPercent="25%"
         app:layout_widthPercent="100%"
         android:gravity="top|center_horizontal"
         android:layout_below="@+id/ll_login_input_holder"
