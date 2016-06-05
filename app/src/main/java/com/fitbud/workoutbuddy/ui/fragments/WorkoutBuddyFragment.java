@@ -7,10 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fitbud.workoutbuddy.interfaces.WorkoutBuddyFragmentInterface;
+import com.fitbud.workoutbuddy.ui.activities.WorkoutBuddyActivity;
+
 /**
  * Created by Rishabh Bhatia on 5/28/2016.
  */
-public class WorkoutBuddyFragment extends Fragment {
+public class WorkoutBuddyFragment extends Fragment implements WorkoutBuddyFragmentInterface {
 
     @Nullable
     @Override
@@ -26,5 +29,24 @@ public class WorkoutBuddyFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+    }
+
+    @Override
+    public String onBackPressed() {
+        return "";
+    }
+
+    @Override
+    public void removeSelf(WorkoutBuddyActivity activity, WorkoutBuddyFragment fragment) {
+        try {
+            activity.removeFragment(activity.getSupportFragmentManager(), fragment);
+        }catch (Exception e) {e.printStackTrace();}
+    }
+
+    @Override
+    public void popFragmentBackStackImmediate(WorkoutBuddyActivity activity) {
+        try {
+            activity.getSupportFragmentManager().popBackStackImmediate();
+        }catch (Exception e) {e.printStackTrace();}
     }
 }
