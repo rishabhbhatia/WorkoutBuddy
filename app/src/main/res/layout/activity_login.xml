@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_heightPercent="35%"
+        app:layout_heightPercent="40%"
         app:layout_widthPercent="100%"
         android:gravity="center_horizontal"
         >
@@ -50,7 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_heightPercent="40%"
+        app:layout_heightPercent="35%"
         app:layout_widthPercent="100%"
         android:gravity="center"
         android:layout_below="@+id/ll_login_label_holder"
@@ -174,7 +174,6 @@
             android:layout_height="wrap_content"
             style="@style/Login_Forgot_Pass"
             android:text="@string/login_forgot_pass"
-            android:layout_margin="@dimen/medium_padding"
             android:padding="@dimen/medium_padding"
             />
 
