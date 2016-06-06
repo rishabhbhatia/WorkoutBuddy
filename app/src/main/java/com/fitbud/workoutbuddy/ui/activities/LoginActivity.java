@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.percent.PercentRelativeLayout;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,10 +20,14 @@ import android.widget.TextView;
 import com.fitbud.workoutbuddy.R;
 import com.fitbud.workoutbuddy.events.LoginEvent;
 import com.fitbud.workoutbuddy.ui.fragments.ForgotPassFragment;
+import com.fitbud.workoutbuddy.ui.fragments.WorkoutBuddyFragment;
+import com.fitbud.workoutbuddy.utils.Const;
 import com.fitbud.workoutbuddy.utils.WorkoutBuddyUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -181,17 +186,44 @@ public class LoginActivity extends WorkoutBuddyActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
+
+        String fragTag = notifyFragments();
+        if(fragTag.equals(""))
+        {
+            WorkoutBuddyUtils.closeApp(LoginActivity.this);
+        }
+    }
+
+    private String notifyFragments() {
+
+        String activeFragTag = "";
+
+        List<Fragment> fragments = getSupportFragmentManager().getFragments();
+
+        if(fragments == null|| fragments.size() ==0) return activeFragTag;
+
+        for(Fragment f : fragments)
+        {
+            if(f != null && f instanceof WorkoutBuddyFragment)
+            {
+                String fragTag = ((WorkoutBuddyFragment) f).onBackPressed();
+
+                if(!fragTag.equals(""))
+                {
+                    activeFragTag = fragTag;
+                    return fragTag;
+                }
+            }
+        }
+
+        return activeFragTag;
     }
 
     @OnClick(R.id.tv_forgot_pass)
     public void loadForgotPassFrag() {
         ForgotPassFragment forgotPassFragment = ForgotPassFragment.newInstance();
-        switchFragment(getSupportFragmentManager(), forgotPassFragment, getResources().getString(R.string.fragment_forgot_pass_tag));
+        switchFragment(getSupportFragmentManager(), forgotPassFragment, getResources().
+                getString(R.string.fragment_forgot_pass_tag), Const.FRAGMENT_SWITCH_REPLACE);
     }
 
 }

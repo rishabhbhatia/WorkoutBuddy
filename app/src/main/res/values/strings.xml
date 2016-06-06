@@ -9,6 +9,8 @@
     <string name="simple_progress_dialog_loading">Loading...</string>
     <string name="image_placeholder">No Image</string>
     <string name="no_internet">Internet not connected. Please connect &amp; retry!</string>
+    <string name="generic_error_msg">Something went wrong. Please retry later!</string>
+
 
     <!-- Fragment Tags -->
     <string name="fragment_forgot_pass_tag">Frag_Forgot_Pass</string>

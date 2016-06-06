@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.fitbud.workoutbuddy.interfaces.WorkoutBuddyInterface;
+import com.fitbud.workoutbuddy.utils.Const;
 
 public class WorkoutBuddyActivity extends AppCompatActivity implements WorkoutBuddyInterface {
 
@@ -15,7 +16,7 @@ public class WorkoutBuddyActivity extends AppCompatActivity implements WorkoutBu
         super.onCreate(savedInstanceState);
     }
 
-    public void switchFragment(FragmentManager fm, Fragment fragment, String name)
+    public void switchFragment(FragmentManager fm, Fragment fragment, String name,  String switchType)
     {
         try {
             if (fm != null) {
@@ -34,7 +35,14 @@ public class WorkoutBuddyActivity extends AppCompatActivity implements WorkoutBu
 
                 if (!fragmentPopped && !currentlyRunningFrag) {
                     FragmentTransaction ft = fm.beginTransaction();
-                    ft.replace(android.R.id.content, fragment, name).addToBackStack(name);
+
+                    if(switchType.equalsIgnoreCase(Const.FRAGMENT_SWITCH_ADD))
+                    {
+                        ft.add(android.R.id.content, fragment, name).addToBackStack(name);
+                    }else
+                    {
+                        ft.replace(android.R.id.content, fragment, name).addToBackStack(name);
+                    }
                     ft.commitAllowingStateLoss();
                 }
             }

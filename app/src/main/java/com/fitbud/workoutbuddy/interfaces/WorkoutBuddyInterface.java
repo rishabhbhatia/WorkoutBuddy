@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentManager;
  */
 public interface WorkoutBuddyInterface {
 
-    void switchFragment(FragmentManager fm, Fragment fragment, String name);
+    void switchFragment(FragmentManager fm, Fragment fragment, String name,  String switchType);
 
     void removeFragment(FragmentManager fm, Fragment fragment);
 }
