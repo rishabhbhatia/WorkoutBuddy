@@ -10,6 +10,7 @@ public class Client {
     private String phoneNumber;
     private String phoneNumber2;
     private String gymName;
+    private String photoUrl;
     private Routine routine;
     private Diet diet;
 
@@ -70,4 +71,11 @@ public class Client {
         this.diet = diet;
     }
 
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
 }
