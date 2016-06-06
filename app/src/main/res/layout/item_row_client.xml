@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/prl_row_client_main_holder"
+    android:background="@android:color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="37%"
+        app:layout_widthPercent="42%"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/small_padding"
+            >
+
+            <ImageView
+                android:id="@+id/iv_row_client_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right|end"
+                android:src="@android:drawable/btn_radio"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_row_client_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/common_plus_signin_btn_icon_dark_pressed"
+                android:layout_gravity="center"
+                />
+
+            <RatingBar
+                android:id="@+id/rb_row_client_ratings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.DeviceDefault.RatingBar.Small"
+                android:numStars="5"
+                android:rating="3"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/small_padding"
+                />
+
+            <TextView
+                android:id="@+id/tv_row_client_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="Rishabh Bhatia"
+                />
+
+            <TextView
+                android:id="@+id/tv_row_client_gym"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="Gold Gym"
+                />
+
+            <TextView
+                android:id="@+id/tv_row_client_last_visit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="end|bottom"
+                android:text="Active: 2 hours ago"
+                android:layout_marginTop="@dimen/medium_padding"
+                android:padding="@dimen/small_padding"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.percent.PercentRelativeLayout>

@@ -13,7 +13,7 @@ public class Client {
     private Routine routine;
     private Diet diet;
 
-    
+
     public String getName() {
         return name;
     }
