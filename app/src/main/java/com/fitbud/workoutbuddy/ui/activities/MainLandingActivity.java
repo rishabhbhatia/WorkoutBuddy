@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.fitbud.workoutbuddy.R;
+import com.fitbud.workoutbuddy.utils.WorkoutBuddyUtils;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 
 import butterknife.BindView;
@@ -39,10 +40,6 @@ public class MainLandingActivity extends WorkoutBuddyActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
+        WorkoutBuddyUtils.closeApp(MainLandingActivity.this);
     }
 }
